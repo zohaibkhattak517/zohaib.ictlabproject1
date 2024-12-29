@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Books Review Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #e0eafc, #9f9fe1); /* Gradient background */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header with Dark Blue Navbar */
+        header {
+            background-color: #003366; /* Dark Blue */
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        /* Styling the navbar links */
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-size: 1.1em;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 5px; /* Border radius for rounded links */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hover effect for navbar links */
+        .navbar-nav .nav-link:hover {
+            background-color: #001f4d; /* Darker blue on hover */
+            color: white !important; /* Keep text color white on hover */
+        }
+
+        /* Remove the yellow color from active link */
+        .navbar-nav .active {
+            color: white !important;  /* Keep it white or choose another color */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;  /* Change the text color to white */
+            padding: 20px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        footer a {
+            color: white;  /* Change the link color to white */
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #0066cc;  /* Change hover effect color to blue */
+        }
+
+        .category-card {
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .category-card h3 {
+            font-size: 1.6em;
+            color: #0066cc;
+            margin-top: 15px;
+        }
+
+        .category-card p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .category-card .btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .category-card .btn:hover {
+            background-color: #004b99;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .category-card {
+                margin: 10px 0;
+            }
+
+            .category-card h3 {
+                font-size: 1.3em;
+            }
+
+            .category-card p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Books Review Portal</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="categories.html">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link" href="submit-review.html">Submit Review</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center text-primary mb-4">Book Categories</h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="category-card">
+                    <img src="https://cdn.prod.website-files.com/64a91aff0460ecc653fe8cb9/66c378501776598213836ab7_fiction_vs_nonfiction-p-1080.webp" alt="Fiction">
+                    <h3>Fiction</h3>
+                    <p>Explore the best fictional books of all time.</p>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="category-card">
+                    <img src="https://www.slj.com/binaries/content/gallery/Jlibrary/2021/10/browsable-nonfiction-feat-img-800px.jpg" alt="Non-fiction">
+                    <h3>Non-Fiction</h3>
+                    <p>Books based on real events and true stories.</p>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="category-card">
+                    <img src="https://www.valeem.com/wp-content/uploads/2023/02/3651141-scaled-1.jpg" alt="Science">
+                    <h3>Science</h3>
+                    <p>Explore the world of science, discovery, and research.</p>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Online Books Review Portal. All rights reserved.</p>
+        <div>
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
