@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Review - Books Review Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #e0eafc, #9f9fe1); /* Gradient background */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar - Dark Blue Background */
+        header {
+            background-color: #003366; /* Dark blue color */
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            background-color: #003366 !important; /* Dark blue color */
+        }
+
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+
+        .navbar-brand {
+            font-size: 2em;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #002240; /* Darker blue on hover */
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Review Form Section */
+        .review-form {
+            max-width: 700px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-form h2 {
+            font-size: 2em;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .review-form label {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+
+        .review-form input, .review-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1.1em;
+        }
+
+        .review-form textarea {
+            resize: vertical;
+        }
+
+        .review-form input:focus, .review-form textarea:focus {
+            border-color: #003366;
+            outline: none;
+        }
+
+        .btn {
+            background-color: #003366;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #002240; /* Darker blue on hover */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.8em;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 1em;
+            }
+
+            .review-form {
+                padding: 20px;
+            }
+
+            .review-form h2 {
+                font-size: 1.8em;
+            }
+
+            .btn {
+                font-size: 1em;
+                padding: 10px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Books Review Portal</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="submit-review.html">Submit Review</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="text-center mt-5" style="font-size: 2.5em; color: #003366;">Submit a Book Review</h1>
+        <div class="review-form">
+            <h2>Share Your Thoughts</h2>
+            <form id="reviewForm" onsubmit="return validateForm()">
+                <label for="bookTitle">Book Title</label>
+                <input type="text" id="bookTitle" placeholder="Enter the title of the book" required>
+
+                <label for="authorName">Author</label>
+                <input type="text" id="authorName" placeholder="Enter the author's name" required>
+
+                <label for="rating">Rating (out of 5)</label>
+                <input type="number" id="rating" max="5" min="1" placeholder="Rate the book" required>
+
+                <label for="review">Your Review</label>
+                <textarea id="review" rows="5" placeholder="Write your review here" required></textarea>
+
+                <button type="submit" class="btn">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Online Books Review Portal. All rights reserved.</p>
+        <div>
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validateForm() {
+            const title = document.getElementById("bookTitle").value;
+            const author = document.getElementById("authorName").value;
+            const rating = document.getElementById("rating").value;
+            const review = document.getElementById("review").value;
+
+            if (!title || !author || !rating || !review) {
+                alert("Please fill in all the fields.");
+                return false;  // Prevent form submission if validation fails
+            }
+            alert("Review submitted successfully!");
+            return true;  // Allow form submission if all fields are filled
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
